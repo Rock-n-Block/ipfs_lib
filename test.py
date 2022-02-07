@@ -7,7 +7,7 @@ client = ipfsclient.connect(endpoint="https://ipfs11.rocknblock.io", port=443)
 
 with client as session:
     add_hash = session.add(
-        file=os.path.dirname(__file__) + "/13.png",
+        file=os.path.dirname(os.path.abspath(__file__)) + "/13.png",
         params={"pin": True, "quieter": True},
     )
     print(add_hash)
